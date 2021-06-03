@@ -1,14 +1,14 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Api RESTful Portfolio Luis E Guerrero",
+  "description": "Api RESTful Tecnology Blog by Luis Enrique Guerrero",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Luis Enrique Guerrero",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
     "connect-multiparty": "^2.2.0",
