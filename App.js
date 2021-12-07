@@ -18,7 +18,6 @@ app.use(bodyParser.json()); // CONVIERTE toda petición entrante en .JSON
 
 
 //Configuracion
-app.set('port', process.env.PORT || 3000)
 app.use(cors())
 app.use(express.json())
 

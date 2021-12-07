@@ -1,13 +1,15 @@
 'use strict'
+const express = require('express');
 
 var mongoose = require('mongoose');
 var app = require('./App');
-
-const port = app.PORT;
+const port = express();
 
 const database = "Colosus_db";
 const password = "666JyzE3nEK.UDx";
 const URI = 'mongodb+srv://StarFiveTeam:'+password+'@akasha-db.cpnnt.mongodb.net/'+database+'?retryWrites=true&w=majority';
+
+port.set('port', process.env.PORT || 3000)
 
 
 mongoose.set('useFindAndModify', false); //DESACTIVA LOS METODOS ANTIGUOS DE CONEXIÓN
@@ -20,8 +22,8 @@ mongoose.connect(URI)  // SERVICIO ATHLAS
             console.log('La conexión con MongooDB se establecio en forma Exitosa!!!');
 
             // CREAR EL SERVIDOR Y ESCUCHAR PETICIONES:
-            app.listen(port, () =>{
-                console.log('Servidor corriendo en:Https://technology-blog-njs.herokuapp.com:'+port); // SERVICIO ON-LINE
+            app.listen(port.get('port'), () =>{
+                console.log('Servidor corriendo en:Https://technology-blog-njs.herokuapp.com:'+port.get('port')); // SERVICIO ON-LINE
                 //console.log('Servidor corriendo en: Http://localhost:'+port); // SERVICIO LOCAL
             });
 
