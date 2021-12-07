@@ -1,18 +1,28 @@
 'use strict' //CARGA EL MODO ESTRICTO DE JS
 
 // CARGAR módulos de NODE para CREAR el Servidor
-var express = require('express');  // Carga el módulo Express de Node.js que permite CREAR el Servidor
-var bodyParser = require('body-parser'); // Recibe las peticiones y para convertirlas en .JSON
+const express = require('express');  // Carga el módulo Express de Node.js que permite CREAR el Servidor
+const bodyParser = require('body-parser'); // Recibe las peticiones y para convertirlas en .JSON
+
+const cors = require('cors');
 
 // EJECUTAR express PARA el trabajo con (HTTP)
-var app = express(); // Es la Aplicación 
+const app = express(); // Es la Aplicación 
 
 // CARGAR ficheros de RUTAS
-var article_routes = require('./routes/article');
+const article_routes = require('./routes/article');
 
 // CARGAR MiddLewares para la carga de FICHEROS
 app.use(bodyParser.urlencoded({ extended: false })); // CARGA el bodyParser para utilizarlo
 app.use(bodyParser.json()); // CONVIERTE toda petición entrante en .JSON
+
+
+//Configuracion
+app.set('port', process.env.PORT || 3000)
+app.use(cors())
+app.use(express.json())
+
+const PORT = app.set('port', process.env.PORT || 3000)
 
 // CARGAR CORS para permitir las llamadas desde el FRONTEND
 // Configurar cabeceras y cors

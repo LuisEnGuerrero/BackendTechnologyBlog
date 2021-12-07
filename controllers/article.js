@@ -16,7 +16,7 @@ var controller = {
         return res.status(200).send({
             curso: 'Master en Frameworks JS',
             autor: 'Luis Enrique Guerrero',
-            url: 'http://luisenriqueguerrero.app',
+            url: 'http://luisenguerrero.netlify.app',
             hola
         });
 

@@ -2,7 +2,8 @@
 
 var mongoose = require('mongoose');
 var app = require('./App');
-var port = 3900;
+
+const port = app.PORT;
 
 const database = "Colosus_db";
 const password = "666JyzE3nEK.UDx";
@@ -20,9 +21,9 @@ mongoose.connect(URI)  // SERVICIO ATHLAS
 
             // CREAR EL SERVIDOR Y ESCUCHAR PETICIONES:
             app.listen(port, () =>{
-                //console.log('Servidor corriendo en:https://technology-blog.netlify.app:'+port); // SERVICIO ON-LINE
-                console.log('Servidor corriendo en: Http://localhost:'+port); // SERVICIO LOCAL
+                console.log('Servidor corriendo en:Https://technology-blog-njs.herokuapp.com:'+port); // SERVICIO ON-LINE
+                //console.log('Servidor corriendo en: Http://localhost:'+port); // SERVICIO LOCAL
             });
 
         })
-        .catch(err => console.err(err));
+        .catch(err => console.log(err));
