@@ -249,10 +249,10 @@ var controller = {
 
         //Conseguir nombre y extensión del archivo
         var file_path = req.files.file0.path;
-        var file_split = file_path.split('\\'); //Solo para Windows
+        //var file_split = file_path.split('\\'); //Solo para Windows
         
         //** ADVERTENCIA ** Utilizar en LINUX O MAC:
-        // var file_split = file_path.split('/');
+        var file_split = file_path.split('/');
 
         //Nombre del archivo:
         var file_name = file_split[2];
